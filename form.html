@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="signupform">
+        <div class="mb-3">
+            <label for="name"> Name</label>
+            <br>
+            <input name="name" type="text" id="name">
+        </div>
+        <br>
+        <div class="mb-3">
+            <label for="exampleInputEmail1">Email address</label>
+            <br>
+            <input type="email" id="email" aria-describedby="emailHelp">
+            <div id="email">We'll never share your email with anyone else.</div>
+        </div>
+            <br>
+        <div class="mb-3">
+            <label for="contact"> Contact</label>
+            <br>
+            <input name="contact" type="text" id="contact">
+        </div>
+        <br>
+        <div class="mb-3">
+            <label for="age"> Age</label>
+            <br>
+            <input name="age" type="number" id="age">
+        </div>
+      <br>
+        <button type="submit">Submit</button>
+    </form>
+    <script>
+        document.getElementById("signupform").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            // Get user details
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const age =  document.getElementById("age").value;
+            const contact = document.getElementById("contact").value;
+
+            // Store user details in local stroage 
+            localStorage.setItem('userName', name);
+            localStorage.setItem('userEmail', email);
+            localStorage.setItem('userAge', age);
+            localStorage.setItem('userContact', contact);
+
+            // Redirect user details form add-to-cart page
+            window.location.href = 'add-to-cart.html';
+        });
+    </script>
+
+
+</body>
+
+</html>
